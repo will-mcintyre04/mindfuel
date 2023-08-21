@@ -25,6 +25,7 @@ This will create an `app.db` database within an `instance` directory.
 from flask import Flask
 from .config import app_config
 from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
 
 db = SQLAlchemy()
 
@@ -42,6 +43,9 @@ def create_app(config_name="development"):
     app : flask.Flask
         A configured Flask app instance with database connectivity.
     """
+
+    # Load environment variables
+    load_dotenv()
 
     # Create Flask app instance and configure based on environment
     app = Flask(__name__)
