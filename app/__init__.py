@@ -28,9 +28,9 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-def create_app(config_name):
+def create_app(config_name="development"):
     """
-    Flask app factory to configure app with SQLAlchemy database support.
+    Flask app factory to configure app with SQLAlchemy database support, default to development.
 
     Parameters
     ----------
