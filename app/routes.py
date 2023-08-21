@@ -1,6 +1,19 @@
+"""
+Flask Blueprint for defining routes.
+
+This module defines routes and associated views for the app.
+
+Blueprint
+---------
+bp : flask.Blueprint
+    A blueprint object representing the main email update routes.
+
+"""
+
 from flask import Blueprint, request, jsonify
 from .models import Email, db
 
+# Initialize blueprint within the current module (so Flask knows where to look for templates/static files from)
 bp = Blueprint('main', __name__)
 
 @bp.route('/')
