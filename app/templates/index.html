@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body%}
+<div>
+    <form action="{{url_for('main.add_email')}}" method="POST">
+        <textarea class="form-control" name="address" placeholder="Enter an email..."></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<div>
+    <h2> Existing Emails</h2>
+    <ul>
+        {% for entry in emails %}
+        <li>
+            {{entry.address}}
+            <form action="{{url_for('main.delete_email', address=entry.address) }}" method="GET">
+                <input type="submit" value="Delete">
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock body%}

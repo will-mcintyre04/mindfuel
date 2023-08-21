@@ -10,7 +10,7 @@ bp : flask.Blueprint
 
 """
 
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, redirect, url_for, render_template, flash, json
 from .models import Email, db
 
 # Initialize blueprint within the current module (so Flask knows where to look for templates/static files from)
@@ -18,18 +18,29 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
-    return "Welcome to the Email Update App!"
+    # GET method, for viewing and input
+    return render_template('index.html', emails = Email.query.all())
 
-@bp.route('/add_email', methods=['POST'])
+@bp.route('/add_email', methods=['POST', 'GET'])
 def add_email():
-    data = request.json
-    address = data.get('address')
-
-    if not address:
-        return jsonify({'error': 'Email address missing'}), 400
-
-    new_email = Email(address=address)
-    db.session.add(new_email)
+    # POST method request. Add email to database.
+    email = Email(address = request.form['address'])
+    db.session.add(email)
     db.session.commit()
+    return redirect(url_for('main.index'))
 
-    return jsonify({'message': 'Email added successfully'}), 201
+@bp.route('/delete_email/<address>', methods=['GET', 'POST'])
+def delete_email(address):
+    if request.method == 'GET':
+        return render_template('confirm_delete.html', address=address)
+
+    # If POST method, delete from the database
+    if request.method == 'POST':
+        email = Email.query.filter_by(address=address).first()
+        
+        if email:
+            db.session.delete(email)
+            db.session.commit()
+        else:
+            return redirect(url_for('main.index'))
+        return redirect(url_for('main.index'))
