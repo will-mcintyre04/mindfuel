@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<link rel="stylesheet", href="static/css/main.css">
+{% endblock head %}
+
 {% block body%}
-<div>
-    <form action="{{url_for('main.add_email')}}" method="POST">
-        <textarea class="form-control" name="address" placeholder="Enter an email..."></textarea>
-        <input type="submit" value="Submit">
+<div class="wrapper">
+    <div class="header">
+        <h1>Subscribe to our Newsletter</h1>
+    </div>
+    <div class="text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+    <form class="container" action="{{url_for('main.add_email')}}" method="POST">
+        <textarea class="text-box" name="address" placeholder="Enter an email..."></textarea>
+        <button class="submit-button">Submit</button>
     </form>
-</div>
-<div>
     <h2> Existing Emails</h2>
     <ul>
         {% for entry in emails %}

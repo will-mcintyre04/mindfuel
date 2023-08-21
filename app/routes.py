@@ -10,7 +10,7 @@ bp : flask.Blueprint
 
 """
 
-from flask import Blueprint, request, redirect, url_for, render_template, flash, json
+from flask import Blueprint, request, redirect, url_for, render_template, flash
 from .models import Email, db
 
 # Initialize blueprint within the current module (so Flask knows where to look for templates/static files from)
@@ -21,7 +21,7 @@ def index():
     # GET method, for viewing and input
     return render_template('index.html', emails = Email.query.all())
 
-@bp.route('/add_email', methods=['POST', 'GET'])
+@bp.route('/add_email', methods=['POST'])
 def add_email():
     # POST method request. Add email to database.
     email = Email(address = request.form['address'])
@@ -31,6 +31,7 @@ def add_email():
 
 @bp.route('/delete_email/<address>', methods=['GET', 'POST'])
 def delete_email(address):
+    # If GET, show confirmation
     if request.method == 'GET':
         return render_template('confirm_delete.html', address=address)
 
