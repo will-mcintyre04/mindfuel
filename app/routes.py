@@ -1,5 +1,5 @@
 """
-Flask Blueprint for defining routes.
+Flask Blueprint Definitions.
 
 This module defines routes and associated views for the app.
 

@@ -1,4 +1,6 @@
 """
+Flask Application Models.
+
 Defines the model class representing the "Email" table within the database.
 
 Classes
@@ -7,6 +9,7 @@ Email:
     Model class representing an email address.
 """
 
+# Import SQLAlchemy database instance.
 from . import db
 
 class Email(db.Model):
