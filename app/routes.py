@@ -10,7 +10,7 @@ bp : flask.Blueprint
 
 """
 
-from flask import Blueprint, request, redirect, url_for, render_template, flash
+from flask import Blueprint, request, redirect, url_for, render_template
 from .models import Email, db
 
 # Initialize blueprint within the current module (so Flask knows where to look for templates/static files from)
