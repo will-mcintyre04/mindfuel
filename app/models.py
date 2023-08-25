@@ -10,7 +10,7 @@ Email:
 """
 
 # Import SQLAlchemy database instance.
-from . import db
+from .extensions import db
 
 class Email(db.Model):
     """

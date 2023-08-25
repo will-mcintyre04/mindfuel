@@ -15,7 +15,7 @@ Examples
 To create a local SQLite database with a specific configuration:
 
 >>> flask shell
->>> from app.extenions import db
+>>> from app.extensions import db
 >>> from app.models import Email
 >>> db.create_all()
 >>> exit()
