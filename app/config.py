@@ -69,8 +69,6 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI : str
         The URI for the production database obtained from the 'DATABASE_URL' environment variable.
     """
-    from dotenv import load_dotenv
-    load_dotenv()
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
