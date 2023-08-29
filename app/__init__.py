@@ -56,8 +56,6 @@ def create_app(config_name='development'):
 
     # Create Flask app instance and configure based on environment
     app = Flask(__name__)
-    config = app_config[config_name]
-    print(config.SQLALCHEMY_DATABASE_URI)
     app.config.from_object(app_config[config_name])
 
     # Connect SQLAlchemy database ORM object to the flask app
