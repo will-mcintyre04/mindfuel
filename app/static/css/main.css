@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: #f7cab3;
+    background-color: white;
     font-family: 'Times New Roman', Times, serif;
 }
 .wrapper{
@@ -11,6 +11,7 @@ body{
     margin-left: 10%; 
     margin-right: 50%;
     min-width: 500px;
+    display: inline-block;
 }
 
 .header{
@@ -62,9 +63,15 @@ body{
     .submit-button {
         width: 100%; /* Make the button full width */
     }
+
     .wrapper{
         margin: 10%;
         min-width: 100px;
+        text-align: center;
+    }
+
+    img{
+        display: inline-block;
     }
 
 }
