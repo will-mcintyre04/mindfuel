@@ -30,12 +30,17 @@ body{
 .text-box {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #f7f7f7;
+    background-color: #f7f7f7;
     border-radius: 4px;
     flex-grow: 1;
     margin-right: 10px;
     resize: none;
 }
+
+.text-box::placeholder {
+    font-family: 'Times New Roman', Times, serif;
+  }
 
 .submit-button {
     padding: 10px 20px;

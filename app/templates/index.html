@@ -13,8 +13,8 @@
     <div class="text">
         <p>Mindfuel sends inspirational quotes to subscribers daily. That's it. A minimalistic, sleek design and thoughtfulness to start your day off on the right note.</p>
     </div>
-    <form class="container" action="{{url_for('main.add_email')}}" method="POST">
-        <textarea class="text-box" name="address" placeholder="Enter an email..."></textarea>
+    <form type="submit" class="container" action="{{url_for('main.add_email')}}" method="POST">
+        <textarea type="email" class="text-box" name="address" placeholder="Enter an email..."></textarea>
         <button class="submit-button">Submit</button>
     </form>
 </div>
