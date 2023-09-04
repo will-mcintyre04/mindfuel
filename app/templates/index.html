@@ -6,26 +6,16 @@
 
 {% block body%}
 <div class="wrapper">
+    <img src="https://github.com/will-mcintyre04/flask-practice/assets/78566536/2aa7439b-19c7-49b9-aedf-89497e9acf96" style="width: 200px;" alt="Mindfuel">
     <div class="header">
-        <h1>Subscribe to our Newsletter</h1>
+        <h1>Looking for a Daily Pickup?</h1>
     </div>
     <div class="text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Mindfuel sends inspirational quotes to subscribers daily. That's it. A minimalistic, sleek design and thoughtfulness to start your day off on the right note.</p>
     </div>
-    <form class="container" action="{{url_for('main.add_email')}}" method="POST">
-        <textarea class="text-box" name="address" placeholder="Enter an email..."></textarea>
+    <form type="submit" class="container" action="{{url_for('main.add_email')}}" method="POST">
+        <textarea type="email" class="text-box" name="address" placeholder="Enter an email..."></textarea>
         <button class="submit-button">Submit</button>
     </form>
-    <h2> Existing Emails</h2>
-    <ul>
-        {% for entry in emails %}
-        <li>
-            {{entry.address}}
-            <form action="{{url_for('main.delete_email', address=entry.address) }}" method="GET">
-                <input type="submit" value="Delete">
-            </form>
-        </li>
-        {% endfor %}
-    </ul>
 </div>
 {% endblock body%}

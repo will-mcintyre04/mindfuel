@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: #f7cab3;
+    background-color: white;
     font-family: 'Times New Roman', Times, serif;
 }
 .wrapper{
@@ -11,6 +11,7 @@ body{
     margin-left: 10%; 
     margin-right: 50%;
     min-width: 500px;
+    display: inline-block;
 }
 
 .header{
@@ -29,12 +30,17 @@ body{
 .text-box {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #f7f7f7;
+    background-color: #f7f7f7;
     border-radius: 4px;
     flex-grow: 1;
     margin-right: 10px;
     resize: none;
 }
+
+.text-box::placeholder {
+    font-family: 'Times New Roman', Times, serif;
+  }
 
 .submit-button {
     padding: 10px 20px;
@@ -62,9 +68,15 @@ body{
     .submit-button {
         width: 100%; /* Make the button full width */
     }
+
     .wrapper{
         margin: 10%;
         min-width: 100px;
+        text-align: center;
+    }
+
+    img{
+        display: inline-block;
     }
 
 }

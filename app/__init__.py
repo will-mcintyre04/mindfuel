@@ -34,7 +34,7 @@ from dotenv import load_dotenv
 from .config import app_config
 from .extensions import db
 
-def create_app(config_name="development"):
+def create_app(config_name='development'):
     """
     Flask app factory to configure app with SQLAlchemy database support, default to development.
 
