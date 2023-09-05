@@ -33,8 +33,13 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS : bool
         Controls whether SQLAlchemy should track modifications to database objects.
         Setting this to False can improve performance and memory usage.
+    SECRET_KEY : str
+        Creates a secret key to allow session management.
 
     """
+    import secrets
+    secret_key = secrets.token_hex(16)
+    SECRET_KEY = secret_key
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(Config):
@@ -69,11 +74,7 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI : str
         The URI for the production database obtained from the 'DATABASE_URL' environment variable.
     """
-    from dotenv import load_dotenv
-    load_dotenv()
-    DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://willymac:will'sdb@willymac.mysql.pythonanywhere-services.com/willymac$emails"
-    print(SQLALCHEMY_DATABASE_URI)
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
 
 app_config = {
     'development': DevelopmentConfig,

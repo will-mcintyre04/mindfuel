@@ -1,18 +1,7 @@
-"""
-Flask Blueprint Definitions.
-
-This module defines routes and associated views for the app.
-
-Blueprint
----------
-bp : flask.Blueprint
-    A blueprint object representing the main email update routes.
-
-"""
-
-from flask import Blueprint, request, redirect, url_for, render_template
+from flask import Blueprint, request, redirect, url_for, render_template, flash
 from .models import Email, db
 import os
+from sqlalchemy.exc import IntegrityError
 
 # Initialize blueprint within the current module (so Flask
 # knows where to look for templates/static files from)
@@ -21,20 +10,27 @@ bp = Blueprint('main', __name__)
 @bp.route('/')
 def index():
     # GET method, for viewing and input
-    success = request.args.get('success', False)
     return render_template('index.html', 
                             github_image=os.path.join("static",
                                                      "images",
-                                                     "github.png"),
-                            success=success)
+                                                     "github.png"))
 
 @bp.route('/add_email', methods=['POST'])
 def add_email():
-    # POST method request. Add email to database.
-    email = Email(address = request.form['address'])
-    db.session.add(email)
-    db.session.commit()
-    return redirect(url_for('main.index', success=True))
+    # POST method request. Add email to the database.
+    email_address = request.form.get('address')
+    
+    try:
+        email = Email(address=email_address)
+        db.session.add(email)
+        db.session.commit()
+        flash("Success: Thank you for subscribing!", "success")
+    except IntegrityError as e:
+        # Rollback the transaction
+        db.session.rollback()
+        flash("Error: email already exists in the database!", "error")
+    
+    return redirect(url_for('main.index'))
 
 @bp.route('/delete_email/<address>', methods=['GET', 'POST'])
 def delete_email(address):
