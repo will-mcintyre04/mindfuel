@@ -1,5 +1,5 @@
 """
-Flask Application Configuration Settings. 
+Flask Application Configuration Settings.
 
 Defines configuration classes dependant on production/development environment.
 
@@ -69,10 +69,17 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI : str
         The URI for the production database obtained from the 'DATABASE_URL' environment variable.
     """
-    DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    from dotenv import load_dotenv
+    load_dotenv()
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://willymac:will'sdb@willymac.mysql.pythonanywhere-services.com/willymac$emails"
+    print(SQLALCHEMY_DATABASE_URI)
 
 app_config = {
     'development': DevelopmentConfig,
     'production': ProductionConfig
 }
+
+if __name__ == "__main__":
+    test = ProductionConfig()
+    print(test.SQLALCHEMY_DATABASE_URI)
