@@ -12,15 +12,21 @@ bp : flask.Blueprint
 
 from flask import Blueprint, request, redirect, url_for, render_template
 from .models import Email, db
+import os
 
-# Initialize blueprint within the current module (so Flask knows where to look for templates/static files from)
+# Initialize blueprint within the current module (so Flask
+# knows where to look for templates/static files from)
 bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
     # GET method, for viewing and input
     success = request.args.get('success', False)
-    return render_template('index.html', emails = Email.query.all(), success=success)
+    return render_template('index.html', 
+                            github_image=os.path.join("static",
+                                                     "images",
+                                                     "github.png"),
+                            success=success)
 
 @bp.route('/add_email', methods=['POST'])
 def add_email():
