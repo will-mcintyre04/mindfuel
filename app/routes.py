@@ -19,7 +19,8 @@ bp = Blueprint('main', __name__)
 @bp.route('/')
 def index():
     # GET method, for viewing and input
-    return render_template('index.html', emails = Email.query.all())
+    success = request.args.get('success', False)
+    return render_template('index.html', emails = Email.query.all(), success=success)
 
 @bp.route('/add_email', methods=['POST'])
 def add_email():
@@ -27,7 +28,7 @@ def add_email():
     email = Email(address = request.form['address'])
     db.session.add(email)
     db.session.commit()
-    return redirect(url_for('main.index'))
+    return redirect(url_for('main.index', success=True))
 
 @bp.route('/delete_email/<address>', methods=['GET', 'POST'])
 def delete_email(address):

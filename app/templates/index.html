@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet", href="static/css/main.css">
+<link rel="stylesheet" href="static/css/main.css">
 {% endblock head %}
 
 {% block body%}
@@ -13,9 +13,17 @@
     <div class="text">
         <p>Mindfuel sends inspirational quotes to subscribers daily. That's it. A minimalistic, sleek design and thoughtfulness to start your day off on the right note.</p>
     </div>
-    <form type="submit" class="container" action="{{url_for('main.add_email')}}" method="POST">
-        <textarea type="email" class="text-box" name="address" placeholder="Enter an email..."></textarea>
-        <button class="submit-button">Submit</button>
+
+    <!-- Display success message if 'success' is present in the URL parameters -->
+    {% if success %}
+    <div class="alert alert-success">
+        <strong>Success:</strong> Thank you for subscribing!
+    </div>
+    {% else %}
+    <form class="container" action="{{url_for('main.add_email')}}" method="POST">
+        <input type="email" class="text-box" name="address" id="emailInput" placeholder="Enter an email..." required>
+        <button type="submit" class="submit-button" id="submitButton">Submit</button>
     </form>
+    {% endif %}
 </div>
 {% endblock body%}
