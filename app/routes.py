@@ -10,10 +10,7 @@ bp = Blueprint('main', __name__)
 @bp.route('/')
 def index():
     # GET method, for viewing and input
-    return render_template('index.html', 
-                            github_image=os.path.join("static",
-                                                     "images",
-                                                     "github.png"))
+    return render_template('index.html')
 
 @bp.route('/add_email', methods=['POST'])
 def add_email():

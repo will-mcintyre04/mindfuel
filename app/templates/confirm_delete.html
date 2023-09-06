@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<link rel="stylesheet" href="/static/css/main.css">
+{% endblock head %}
+
 {% block body %}
-<div>
-    <p>Confirm deletion of {{address}} from database.</p>
+<div class="wrapper">
+    <a href="https://willymac.pythonanywhere.com"><img src="https://github.com/will-mcintyre04/flask-practice/assets/78566536/2aa7439b-19c7-49b9-aedf-89497e9acf96" style="width: 200px;" alt="Mindfuel"></a>
+    <p>Are you sure you want to unsubscribe '{{address}}' from Mindfuel?</p>
     <form action="{{url_for('main.delete_email', address=address)}}" method="POST">
-        <input type="submit" value="Confirm">
+        <button type="submit" class="submit-button">Confirm</button>
     </form>
 </div>
+<footer>
+    <div class="footer-content">
+        <div>
+            <a href="https://github.com/will-mcintyre04/quote-website" target="_blank"><img src="{{ url_for('static', filename='images/github.png') }}" style="width: 13px;"></a>
+        </div>
+        <div class="footer-below">
+            | 2023 Will McIntyre |
+        </div>
+    </div>
+</footer>
 {% endblock body %}
