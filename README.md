@@ -60,7 +60,7 @@ This will create an app.db database with an `emails` tab;e within the `instance`
 
 ### 4. Run the app
 ```sh
-app = create_app('production')
+flask --app app run
 ```
 
 
