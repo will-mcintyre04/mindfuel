@@ -4,10 +4,10 @@
 
 <h1 align="center">Welcome to Mindfuel 🌟</h1>
     
-[![License](https://img.shields.io/github/license/your-username/mindfuel)](https://github.com/your-username/mindfuel)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/your-username/mindfuel)
-![GitHub issues](https://img.shields.io/github/issues/your-username/mindfuel)
-![Issues Closed](https://img.shields.io/github/issues-closed/your-username/mindfuel.svg)
+[![License](https://img.shields.io/github/license/will-mcintyre04/mindfuel)](https://github.com/will-mcintyre04/mindfuel)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/will-mcintyre04/mindfuel)
+![GitHub issues](https://img.shields.io/github/issues/will-mcintyre04/mindfuel)
+![Issues Closed](https://img.shields.io/github/issues-closed/will-mcintyre04/mindfuel.svg)
 
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-306998?style=for-the-badge&logo=python&logoColor=white)
