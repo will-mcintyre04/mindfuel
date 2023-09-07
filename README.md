@@ -38,7 +38,7 @@ Visit the website <a href="https://willymac.pythonanywhere.com">here</a> to star
 Follow these steps to set up and run the Mindfuel app on your local machine.
 ### 1. Clone the repository
 ```sh
-git clone https://github.com/your-username/mindfuel.git
+git clone https://github.com/will-mcintyre04/mindfuel.git
 
 cd mindfuel
 ```
