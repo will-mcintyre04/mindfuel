@@ -20,7 +20,7 @@ To create a local SQLite database with a specific configuration:
 >>> db.create_all()
 >>> exit()
 
-This will create an `app.db` database with an `Email` table within an `instance` directory. 
+This will create an `app.db` database with an `emails` table within an `instance` directory. 
 
 Then, to run the app:
 
