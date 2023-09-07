@@ -1,5 +1,5 @@
-<div align="center" >
-    <img src="https://github.com/will-mcintyre04/flask-practice/assets/78566536/2aa7439b-19c7-49b9-aedf-89497e9acf96" width="400px"/>
+<div align="center">
+        <img src="https://github.com/will-mcintyre04/flask-practice/assets/78566536/2aa7439b-19c7-49b9-aedf-89497e9acf96" width="400px">
 </div>
 
 <h1 align="center">Welcome to Mindfuel 🌟</h1>
