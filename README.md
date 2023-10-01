@@ -4,7 +4,6 @@
 
 <h1 align="center">Welcome to Mindfuel 🌟</h1>
     
-[![License](https://img.shields.io/github/license/will-mcintyre04/mindfuel)](https://github.com/will-mcintyre04/mindfuel)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/will-mcintyre04/mindfuel)
 ![GitHub issues](https://img.shields.io/github/issues/will-mcintyre04/mindfuel)
 ![Issues Closed](https://img.shields.io/github/issues-closed/will-mcintyre04/mindfuel.svg)
