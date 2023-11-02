@@ -55,7 +55,7 @@ flask shell
 >>> db.create_all()
 >>> exit()
 ```
-This will create an app.db database with an `emails` tab;e within the `instance` directory.
+This will create an app.db database with an `emails` table within the `instance` directory.
 
 ### 4. Run the app
 ```sh
