@@ -47,7 +47,7 @@ To install all required dependencies, run the following command on your <a href=
 pip install -r requirements.txt
 ```
 
-### 3. Create local, configured SQLite datbase
+### 3. Create local, configured SQLite database
 ```sh
 flask shell
 >>> from app.extensions import db
