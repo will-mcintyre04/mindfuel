@@ -4,7 +4,6 @@
 
 <h1 align="center">Welcome to Mindfuel 🌟</h1>
     
-[![License](https://img.shields.io/github/license/will-mcintyre04/mindfuel)](https://github.com/will-mcintyre04/mindfuel)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/will-mcintyre04/mindfuel)
 ![GitHub issues](https://img.shields.io/github/issues/will-mcintyre04/mindfuel)
 ![Issues Closed](https://img.shields.io/github/issues-closed/will-mcintyre04/mindfuel.svg)
@@ -48,7 +47,7 @@ To install all required dependencies, run the following command on your <a href=
 pip install -r requirements.txt
 ```
 
-### 3. Create local, configured SQLite datbase
+### 3. Create local, configured SQLite database
 ```sh
 flask shell
 >>> from app.extensions import db
@@ -56,7 +55,7 @@ flask shell
 >>> db.create_all()
 >>> exit()
 ```
-This will create an app.db database with an `emails` tab;e within the `instance` directory.
+This will create an app.db database with an `emails` table within the `instance` directory.
 
 ### 4. Run the app
 ```sh
