@@ -1,6 +1,5 @@
 from flask import Blueprint, request, redirect, url_for, render_template, flash
 from .models import Email, db
-import os
 from sqlalchemy.exc import IntegrityError
 
 # Initialize blueprint within the current module (so Flask

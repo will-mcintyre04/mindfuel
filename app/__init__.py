@@ -51,17 +51,13 @@ def create_app(config_name='development'):
         A configured Flask app instance with database connectivity.
     """
 
-    # Load environment variables
     load_dotenv()
 
     # Create Flask app instance and configure based on environment
     app = Flask(__name__)
     app.config.from_object(app_config[config_name])
-
-    # Connect SQLAlchemy database ORM object to the flask app
     db.init_app(app)
 
-    # Register Blueprint to configure routes and views
     from .routes import bp
     app.register_blueprint(bp)
 

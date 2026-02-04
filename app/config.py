@@ -1,22 +1,3 @@
-"""
-Flask Application Configuration Settings.
-
-Defines configuration classes dependant on production/development environment.
-
-Classes
--------
-Config:
-    Base configuration class with shared settings.
-DevelopmentConfig:
-    Configuration class for the development environment.
-ProductionConfig:
-    Configuration class for the production environment.
-
-Attributes
-----------
-app_config : dict
-    A dictionary mapping environment names to their corresponding configuration classes.
-"""
 
 import os
 
@@ -43,37 +24,10 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(Config):
-    """
-    Configuration class for development environment.
-
-    This class inherits from the base Config class and provides configuration settings
-    specific to the development environment.
-
-    Attributes
-    ----------
-    DEBUG : bool
-        Controls whether the application runs in debug mode.
-    SQLALCHEMY_DATABASE_URI : str
-        The URI for the SQLite database used in development.
-    """
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
 
 class ProductionConfig(Config):
-    """
-    Configuration class for production environment.
-
-    This class inherits from the base Config class and provides configuration settings
-    specific to the production environment.
-
-    Attributes
-    ----------
-    DEBUG : bool
-        Controls whether the application runs in debug mode.
-        Note: Debug mode should be turned off in production for security reasons.
-    SQLALCHEMY_DATABASE_URI : str
-        The URI for the production database obtained from the 'DATABASE_URL' environment variable.
-    """
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
 
 app_config = {
