@@ -18,22 +18,20 @@
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![PythonAnywhere](https://img.shields.io/badge/PythonAnywhere-3776AB?style=for-the-badge&logo=pythonanywhere&logoColor=white)
 
-## 🚀 About the Mindfuel App
+## About
 Mindfuel is a Flask-based web application that delivers daily motivational quotes to users. It's designed to uplift and inspire users with a clean and user-friendly interface. Quotes are fetched daily from the <a href="https://zenquotes.io/">ZenQuotes</a> API and emailed at 8am EST.
-
-## 💡 Key Features
 - Subscribing and unsubscribing to daily quotes.
 - Simple and intuitive user interface.
 
-## 🌈 How It Works
+## How It Works
 Mindfuel operates by providing an interface for users to subscribe or unsubscribe from receiving motivational quotes daily. It connects a Python-Anywhere hosted MySQL back-end database using flask-sqlalchemy to an interactive front-end webpage.
 
 > To learn more about the code behind sending the emails, click <a href="https://github.com/will-mcintyre04/quote-emailer">here</a>
 
-## 💌 Subscribe to Mindfuel
+## Subscribe to Mindfuel
 Visit the website <a href="https://willymac.pythonanywhere.com">here</a> to start getting emails in your inbox!
 
-## 🏃‍♂️ Getting Started
+## Getting Started
 Follow these steps to set up and run the Mindfuel app on your local machine.
 ### 1. Clone the repository
 ```sh
