@@ -14,7 +14,7 @@ def index():
 @bp.route('/add_email', methods=['POST'])
 def add_email():
     # POST method request. Add email to the database.
-    email_address = request.form.get('address')
+    email_address = request.form.get('address', '').strip()
     
     try:
         email = Email(address=email_address)
@@ -25,20 +25,27 @@ def add_email():
         # Rollback the transaction
         db.session.rollback()
         flash("Error: email already exists in the database!", "error")
+    except Exception:
+        db.session.rollback()
+        flash("An unexpected error occurred. Please try again.", "error")
     
     return redirect(url_for('main.index'))
 
 @bp.route('/delete_email/<address>', methods=['GET', 'POST'])
 def delete_email(address):
+    email = Email.query.filter_by(address=address).first()
+
+    if not email:
+        flash("The specified email record was not found.", "error")
+        return redirect(url_for('main.index'))
+
     # If GET, show confirmation
     if request.method == 'GET':
         return render_template('confirm_delete.html', address=address)
 
     # If POST method, delete from the database
     if request.method == 'POST':
-        email = Email.query.filter_by(address=address).first()
-        
-        if email:
-            db.session.delete(email)
-            db.session.commit()
+        db.session.delete(email)
+        db.session.commit()
+        flash(f"Record for {address} has been removed.", "success")
         return redirect(url_for('main.index'))

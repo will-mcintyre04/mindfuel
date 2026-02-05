@@ -1,5 +1,6 @@
 
 import os
+import secrets
 
 class Config:
     """
@@ -18,7 +19,6 @@ class Config:
         Creates a secret key to allow session management.
 
     """
-    import secrets
     SECRET_KEY = secrets.token_hex(16)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
