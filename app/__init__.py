@@ -28,7 +28,6 @@ Then, to run the app:
 """
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 
 from .config import app_config

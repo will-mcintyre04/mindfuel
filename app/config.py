@@ -19,8 +19,7 @@ class Config:
 
     """
     import secrets
-    secret_key = secrets.token_hex(16)
-    SECRET_KEY = secret_key
+    SECRET_KEY = secrets.token_hex(16)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(Config):

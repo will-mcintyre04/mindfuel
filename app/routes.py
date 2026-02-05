@@ -41,6 +41,4 @@ def delete_email(address):
         if email:
             db.session.delete(email)
             db.session.commit()
-        else:
-            return redirect(url_for('main.index'))
         return redirect(url_for('main.index'))
